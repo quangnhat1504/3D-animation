@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #18181B;
+    --color-on-primary: #FFFFFF;
+    --color-secondary: #27272A;
+    --color-accent: #F8FAFC;
+    --color-background: #000000;
+    --color-foreground: #FAFAFA;
+    --color-muted: #181818;
+    --color-border: #3F3F46;
+    --color-destructive: #EF4444;
+    --color-ring: #18181B;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[var(--color-border)];
+  }
+  body {
+    @apply bg-[var(--color-background)] text-[var(--color-foreground)];
+    font-family: 'Inter', sans-serif;
+    /* Ensure no scrollbar bounce or overflow issues on the body */
+    overflow-x: hidden;
+  }
+  
+  /* Utilities for hiding scrollbars if needed */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
